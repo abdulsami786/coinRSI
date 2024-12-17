@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "deploy": "firebase deploy --only functions:api",
+    "deploy": "firebase deploy --only functions:api2",
     "serve": "nodemon serve.js"
   },
   "keywords": [],

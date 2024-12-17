@@ -104,6 +104,9 @@ router.post('/', async (req, res) => {
       .filter(result => result !== null) // Remove skipped coins
       .forEach(({ category, data }) => categorizedData[category].push(data));
 
+    Object.keys(categorizedData).forEach(category => {
+        categorizedData[category].sort((a, b) => b.rsi - a.rsi); // Sort in descending order
+      });
     res.json(categorizedData);
   } catch (error) {
     console.error('Error fetching or processing RSI data:', error);
